@@ -5,16 +5,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarButtonComponent } from './navbar/navbar-button/navbar-button.component';
+import { AboutComponent } from './about/about.component';
+import { PicturesComponent } from './pictures/pictures.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: "home", component: HomeComponent },
+  { path: "about", component: AboutComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    NavbarButtonComponent
+    NavbarButtonComponent,
+    AboutComponent,
+    PicturesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
