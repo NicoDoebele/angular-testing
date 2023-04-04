@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class NavbarButtonComponent {
   @Input() tab!: string;
+
+  getPath = () => {
+    return "/" + this.tab.toLowerCase();
+  }
 }
